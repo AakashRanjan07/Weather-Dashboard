@@ -12,12 +12,12 @@ function SearchInput() {
   };
 
   return (
-    <div className="flex items-center justify-center p-2 w-full max-w-lg">
+    <div className="flex items-center justify-center w-full max-w-lg px-4 sm:px-6 md:px-8 mt-2">
       <Input
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         placeholder="Enter city name..."
-        className="flex-grow h-12 p-4 rounded-l-md border placeholder:text-gray-800"
+        className="w-full sm:w-3/4 md:w-2/3 h-12 p-4 rounded-l-md border placeholder:text-gray-800"
       />
 
       <button

@@ -1,7 +1,6 @@
 import { weatherIconMapper } from "../utils/weatherIconMapper";
 import { useWeatherData } from "../hooks/useWeatherData";
 import { useWeatherContext } from "../context/WeatherContext";
-import ForecastDisplay from "./ForecastDisplay";
 
 function WeatherDisplay() {
   const { city, unit } = useWeatherContext();
@@ -17,33 +16,36 @@ function WeatherDisplay() {
 
   const currentDate = new Date().toLocaleDateString();
   const currentTime = new Date().toLocaleTimeString([], {
-    hour: '2-digit',
-    minute: '2-digit',
+    hour: "2-digit",
+    minute: "2-digit",
   });
+
   return (
-    <div className="max-h-screen flex flex-col justify-between">
-      <div className="flex justify-between items-center">
-        <h1 className="text-white text-4xl font-bold">
-          {city || "Sample Text"}
+    <div className="forecast">
+      <div className="flex flex-col sm:flex-row sm:justify-between items-center sm:items-start sm:space-x-96 w-full">
+        <h1 className="text-white text-3xl sm:text-2xl md:mr-44 md:text-5xl font-bold ">
+          {city}
         </h1>
-        <p className="text-white text-xl">{currentTime}</p>
+        <p className="text-white text-lg sm:text-xl sm:mt-0 mt-2">
+          {currentTime}
+        </p>
       </div>
 
-      <div className="flex flex-col items-center justify-center">
-        <div className="text-2xl text-white mb-2">
+      <div className="flex flex-col items-center justify-center text-center">
+        <div className="text-4xl sm:text-5xl md:text-6xl text-white">
           {weatherIconMapper(weatherData.weather[0].main)}
         </div>
-        <p className="text-white text-5xl font-semibold mb-4">
+        <p className="text-white text-5xl sm:text-6xl md:text-7xl font-semibold ">
           {weatherData.main.temp}°{unit === "metric" ? "C" : "F"}
         </p>
-        <p className="text-white text-lg">{currentDate}</p>
-        <p className="text-white text-lg">
+        <p className="text-white text-lg sm:text-xl">{currentDate}</p>
+        <p className="text-white text-lg sm:text-xl">
           Wind: {weatherData.wind.speed} {unit === "metric" ? "m/s" : "mph"}
         </p>
-        <p className="text-white text-lg">Condition: {weatherData.weather[0].description}</p>
-        <ForecastDisplay />
+        <p className="text-white text-lg sm:text-xl">
+          Condition: {weatherData.weather[0].description}
+        </p>
       </div>
-
     </div>
   );
 }

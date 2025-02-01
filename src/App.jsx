@@ -1,8 +1,10 @@
+import ForecastDisplay from "./components/ForecastDisplay";
 import SearchInput from "./components/SearchInput";
 import UnitToggle from "./components/UnitToggle";
 import WeatherDisplay from "./components/WeatherDisplay";
 import { WeatherProvider } from "./context/WeatherContext";
 import { QueryClient, QueryClientProvider } from "react-query";
+// import './App.css'
 
 function App() {
   const queryClient = new QueryClient();
@@ -16,6 +18,7 @@ function App() {
           <SearchInput />
           <UnitToggle />
           <WeatherDisplay />
+          <ForecastDisplay/>
         </div>
       </WeatherProvider>
     </QueryClientProvider>
