@@ -14,15 +14,13 @@ This is a weather dashboard built with React that allows users to search for cit
 
 To run the project locally, follow these steps:
 
-### 1. Clone the Repository
+1. Clone the Repository
 
-```bash
 git clone https://github.com/AakashRanjan07/Weather-Dashboard.git
 cd weather-dashboard
 
 2. Install Dependencies
 
-```bash
 npm install
 
 3. Set Up API Key
@@ -32,7 +30,7 @@ The weather data is fetched from OpenWeatherMap API. You'll need to obtain your 
     Once you have your API key, add in .env file to VITE_API_KEY
 
 4.  Start the Development Server
-```bash
+
 npm run dev
 The app will be available at http://localhost:5173
 
